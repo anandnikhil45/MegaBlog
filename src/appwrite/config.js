@@ -31,6 +31,7 @@ export class Service{
             )
         } catch (error) {
             console.log("Appwrite service :: createPost :: error", error);
+            return null;
         }
     }
 
@@ -49,6 +50,7 @@ export class Service{
             )
         } catch (error) {
             console.log("Appwrite service :: updatePost :: error", error);
+            return null;
         }
     }
 
@@ -120,8 +122,8 @@ export class Service{
         }
     }
 
-    getFilePreview(fileId){
-        return this.bucket.getFilePreview(
+    getFileView(fileId){
+        return this.bucket.getFileView(
             conf.appwriteBucketId,
             fileId
         )
